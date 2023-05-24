@@ -1,7 +1,7 @@
 <section class="container header-container">
   <header>
     <div class="logo"><span>P</span>IX</div>
-    <ul>
+    <ul [class.menu]="isOpened">
       <li>Packages</li>
       <li>Offers</li>
       <li>Contact Us</li>
@@ -10,6 +10,6 @@
       <li>Sign In</li>
       <li>Sign Up</li>
     </ul>
-    <img src="assets/icons/list-bold-2.png" alt="" />
+    <img src="assets/icons/list-bold-2.png" (click)="toggleClass()" alt="" />
   </header>
 </section>

@@ -42,3 +42,14 @@ header img {
   cursor: pointer;
   display: none;
 }
+
+/* MEDIA QUERIES */
+@media (max-width: 900px) {
+  ul {
+    display: none;
+  }
+
+  header img {
+    display: block;
+  }
+}

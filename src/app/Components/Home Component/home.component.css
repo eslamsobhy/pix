@@ -1,7 +1,6 @@
 .home {
   background-color: #eee;
   padding: 60px;
-  height: 90vh;
 }
 
 .home .container {
@@ -94,4 +93,60 @@ article.heading p {
 
 .button:hover {
   background-color: #067a5b;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1105px) {
+  .home {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 985px) {
+  .home {
+    height: 90vh;
+  }
+}
+
+@media (max-width: 969px) {
+  .cards {
+    padding: 60px 0;
+  }
+
+  .card:last-child {
+    position: static;
+  }
+}
+
+@media (max-width: 900px) {
+  .home .container {
+    flex-direction: column;
+  }
+
+  .cards {
+    width: 100%;
+    flex-direction: row;
+    margin-top: 50px;
+  }
+
+  .card:last-child {
+    position: absolute;
+    bottom: 150px;
+  }
+
+  article.heading {
+    margin-top: 50px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 629px) {
+  .cards {
+    margin-top: -30px;
+  }
+
+  .card:last-child {
+    position: static;
+  }
 }

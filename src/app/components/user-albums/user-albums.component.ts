@@ -12,7 +12,7 @@ export class UserAlbumsComponent implements OnInit {
   userAlbums:any;
 
   constructor(private userAlbumsService:AlbumsService, private curRoute:ActivatedRoute) {
-    this.userId = this.curRoute.snapshot.params['id'];
+    this.userId = this.curRoute.snapshot.params['userId'];
   }
 
   ngOnInit() {

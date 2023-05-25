@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-photo-card',
@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./photo-card.component.css']
 })
 export class PhotoCardComponent {
+  @Input() photoInfo:any;
 
+  mouseOverStar = false;
+
+  mouseOver() {
+    this.mouseOverStar = true;
+  }
+
+  mouseOut() {
+    this.mouseOverStar = false;
+  }
 }

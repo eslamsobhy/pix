@@ -7,7 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
-import { CardComponent } from './components/card/card.component';
+import { AlbumCardComponent } from './components/album-card/album-card.component';
 import { UserAlbumsComponent } from './components/user-albums/user-albums.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -22,7 +22,7 @@ import { AlbumPhotosComponent } from './components/album-photos/album-photos.com
     AddUserComponent,
     HeaderComponent,
     HomeComponent,
-    CardComponent,
+    AlbumCardComponent,
     UserAlbumsComponent,
     AlbumPhotosComponent
   ],

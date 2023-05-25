@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddUserComponent } from './Components/add-user/add-user.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 const routes: Routes = [
   { path: 'users/createNew', component: AddUserComponent },

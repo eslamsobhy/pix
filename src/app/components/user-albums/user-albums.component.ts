@@ -11,12 +11,12 @@ export class UserAlbumsComponent implements OnInit {
   userId:any;
   userAlbums:any;
 
-  constructor(private userAlbumsService:AlbumsService, private curRoute:ActivatedRoute) {
+  constructor(private myService:AlbumsService, private curRoute:ActivatedRoute) {
     this.userId = this.curRoute.snapshot.params['userId'];
   }
 
   ngOnInit() {
-    this.userAlbumsService.getUserAlbums(this.userId).subscribe({
+    this.myService.getUserAlbums(this.userId).subscribe({
       next: (data) => {
         this.userAlbums = data;
       },

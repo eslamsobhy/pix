@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlbumPhotosComponent } from './components/album-photos/album-photos.component';
+import { PhotoCardComponent } from './components/photo-card/photo-card.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AlbumPhotosComponent } from './components/album-photos/album-photos.com
     HomeComponent,
     AlbumCardComponent,
     UserAlbumsComponent,
-    AlbumPhotosComponent
+    AlbumPhotosComponent,
+    PhotoCardComponent
   ],
   imports: [
     BrowserModule,

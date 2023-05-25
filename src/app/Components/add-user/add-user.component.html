@@ -1,0 +1,112 @@
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Artist Information</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="myValidation" novalidate>
+      <div class="form-outline mb-4">
+        <input
+          formControlName="name"
+          type="text"
+          id="form2Example11"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': userError }"
+          placeholder="Name"
+          required
+        />
+        <label for="name" class="invalid-feedback ps-3"
+          >Invalid Name: At least 3 letters.</label
+        >
+      </div>
+
+      <div class="form-outline mb-4">
+        <input
+          formControlName="userName"
+          type="text"
+          placeholder="UserName"
+          id="form2Example22"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': userNameError }"
+          required
+        />
+        <label for="userName" class="invalid-feedback ps-3"
+          >Invalid userName: This field is required.</label
+        >
+      </div>
+
+      <div class="form-outline mb-4">
+        <input
+          formControlName="email"
+          type="email"
+          id="form2Example11"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': emailError }"
+          placeholder="Email"
+          required
+        />
+        <label for="age" class="invalid-feedback ps-3"
+          >Invalid Email: Must be example@host.com</label
+        >
+      </div>
+
+      <div
+        class="d-flex flex-column align-items-center justify-content-center pb-4 text-center"
+      >
+        <button
+          type="sumbit"
+          name="add"
+          class="btn btn-outline-primary"
+          [ngClass]="{
+            'is-valid btn-outline-success ': additionSuccess,
+            'btn-outline-danger': !additionSuccess
+          }"
+          (click)="modal.close('Save click')"
+        >
+          Add
+        </button>
+        <label for="add" class="valid-feedback ps-3 pt-3"
+          >Data Added Successfully!</label
+        >
+      </div>
+    </form>
+    <!-- <form>
+			<div class="mb-3">
+				<label for="dateOfBirth">Date of birth</label>
+				<div class="input-group">
+					<input
+						id="dateOfBirth"
+						class="form-control"
+						placeholder="yyyy-mm-dd"
+						name="dp"
+						ngbDatepicker
+						#dp="ngbDatepicker"
+					/>
+					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
+				</div>
+			</div>
+		</form> -->
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-outline-success"
+      (click)="modal.close('Save click')"
+    >
+      Add
+    </button>
+  </div>
+</ng-template>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->
+<button class="btn btn-outline-light" type="button" (click)="open(content)">
+  + Add Artist
+</button>
+<!-- <hr /> -->
+
+<!-- <pre>{{ closeResult }}</pre> -->

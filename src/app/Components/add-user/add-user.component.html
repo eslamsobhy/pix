@@ -9,51 +9,86 @@
     ></button>
   </div>
   <div class="modal-body">
-    <form [formGroup]="myValidation" novalidate>
+    <form [formGroup]="myValidation" class="row" novalidate>
       <div class="form-outline mb-4">
+        <label for="name" class="ps-2 h6"> Name</label>
         <input
           formControlName="name"
           type="text"
-          id="form2Example11"
           class="form-control"
           [ngClass]="{ 'is-invalid': userError }"
-          placeholder="Name"
+          placeholder="eg: john Doe"
           required
         />
-        <label for="name" class="invalid-feedback ps-3"
-          >Invalid Name: At least 3 letters.</label
+        <label for="name" class="invalid-feedback ps-3">
+          Invalid Name: At least 3 letters.</label
+        >
+      </div>
+
+      <div class="form-outline mb-4">
+        <label for="email" class="ps-2 h6">Email</label>
+        <input
+          formControlName="email"
+          type="email"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': emailError }"
+          placeholder="eg: johndoe@example.com"
+          required
+        />
+        <label for="email" class="invalid-feedback ps-3"
+          >Invalid Email: Must be example@host.com</label
         >
       </div>
 
       <div class="form-outline mb-4">
         <input
-          formControlName="userName"
+          formControlName="phone"
           type="text"
-          placeholder="UserName"
-          id="form2Example22"
+          placeholder="eg: 0123456789"
           class="form-control"
-          [ngClass]="{ 'is-invalid': userNameError }"
+          [ngClass]="{ 'is-invalid': phoneError }"
           required
         />
-        <label for="userName" class="invalid-feedback ps-3"
+        <label for="phone" class="invalid-feedback ps-3"
           >Invalid userName: This field is required.</label
         >
       </div>
 
-      <div class="form-outline mb-4">
+      <label for="address" class="ps-3 h6">Address</label>
+      <div class="form-outline col-4 mb-4">
         <input
-          formControlName="email"
-          type="email"
-          id="form2Example11"
+          formControlName="city"
+          type="text"
+          placeholder="City"
           class="form-control"
-          [ngClass]="{ 'is-invalid': emailError }"
-          placeholder="Email"
+          [ngClass]="{ 'is-invalid': addressError }"
           required
         />
-        <label for="age" class="invalid-feedback ps-3"
-          >Invalid Email: Must be example@host.com</label
-        >
       </div>
+      <div class="form-outline col-5 mb-4">
+        <input
+          formControlName="street"
+          type="text"
+          placeholder="Street"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': addressError }"
+          required
+        />
+      </div>
+      <div class="form-outline col-3 mb-4">
+        <input
+          formControlName="suite"
+          type="text"
+          placeholder="Suite"
+          class="form-control"
+          [ngClass]="{ 'is-invalid': addressError }"
+          required
+        />
+      </div>
+        <label for="phone" class="invalid-feedback ps-3"
+          >Invalid Address: This field is required.</label
+        >
+
 
       <div
         class="d-flex flex-column align-items-center justify-content-center pb-4 text-center"
@@ -61,38 +96,22 @@
         <button
           type="sumbit"
           name="add"
-          class="btn btn-outline-primary"
+          class="btn btn-outline-success"
           [ngClass]="{
             'is-valid btn-outline-success ': additionSuccess,
             'btn-outline-danger': !additionSuccess
           }"
-          (click)="modal.close('Save click')"
+          (click)="addUser()"
         >
           Add
         </button>
-        <label for="add" class="valid-feedback ps-3 pt-3"
+        <!-- <label for="add" class="valid-feedback ps-3 pt-3"
           >Data Added Successfully!</label
-        >
+        > -->
       </div>
     </form>
-    <!-- <form>
-			<div class="mb-3">
-				<label for="dateOfBirth">Date of birth</label>
-				<div class="input-group">
-					<input
-						id="dateOfBirth"
-						class="form-control"
-						placeholder="yyyy-mm-dd"
-						name="dp"
-						ngbDatepicker
-						#dp="ngbDatepicker"
-					/>
-					<button class="btn btn-outline-secondary bi bi-calendar3" (click)="dp.toggle()" type="button"></button>
-				</div>
-			</div>
-		</form> -->
   </div>
-  <div class="modal-footer">
+  <!-- <div class="modal-footer">
     <button
       type="button"
       class="btn btn-outline-success"
@@ -100,7 +119,7 @@
     >
       Add
     </button>
-  </div>
+  </div> -->
 </ng-template>
 
 <!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

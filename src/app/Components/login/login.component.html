@@ -8,7 +8,7 @@
           <p>Join our artists community - <i>PIX</i></p>
         </div>
       </div>
-      <div class="col-md-6 right">
+      <form [formGroup]="myValidation" class="col-md-6 right">
         <div class="input-box">
           <header>Login</header>
           <div class="input-field">
@@ -18,6 +18,7 @@
               class="input"
               required
               autocomplete="off"
+              formControlName="email"
             />
             <label for="email">Email</label>
           </div>
@@ -28,14 +29,15 @@
               class="input"
               required
               autocomplete="off"
+              formControlName="password"
             />
-            <label for="age">Password</label>
+            <label for="password">Password</label>
           </div>
           <div class="input-field">
-            <input type="submit" class="submit" value="Join" />
+            <input type="submit" class="submit" (click)="join()" value="Join" />
           </div>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

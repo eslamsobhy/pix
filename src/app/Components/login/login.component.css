@@ -156,3 +156,25 @@ i {
   background-color: #09946f;
   color: #fff;
 }
+
+/* MEDIA QUERIES */
+
+@media (max-width: 991px) {
+  .text {
+    width: 90%;
+  }
+
+  .wrapper {
+    padding: 50px;
+  }
+}
+
+@media (max-width: 767.9999px) {
+  .text {
+    width: 80%;
+  }
+
+  .side-image {
+    border-radius: 10px 10px 0 0;
+  }
+}

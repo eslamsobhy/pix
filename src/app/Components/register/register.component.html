@@ -32,11 +32,18 @@
             <label for="email">Last Name</label>
           </div>
           <div class="input-field">
-            <input type="submit" class="submit" value="Next   " />
+            <input
+              type="submit"
+              class="submit"
+              value="Next    "
+              [ngStyle]="changeStyle"
+            />
             <img
               src="assets/icons/caret-right-bold.png"
               class="next-icon"
               alt=""
+              (mouseenter)="onHover()"
+              (mouseleave)="onLeave()"
             />
           </div>
         </div>

@@ -12,6 +12,7 @@ import { UserAlbumsComponent } from './components/user-albums/user-albums.compon
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HeaderComponent,
     HomeComponent,
     CardComponent,
-    UserAlbumsComponent
+    UserAlbumsComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

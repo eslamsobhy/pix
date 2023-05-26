@@ -8,6 +8,7 @@
   height: 2.25rem;
   border-radius: 100%;
   background-color: #f5f5f5c9;
+  cursor: pointer;
 }
 
 .card-img-overlay {
@@ -23,4 +24,5 @@
   display: flex;
   justify-content: space-between;
   align-items: end;
+  cursor: zoom-in;
 }

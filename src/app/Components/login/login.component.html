@@ -16,6 +16,13 @@
               type="text"
               id="email"
               class="input"
+              [ngStyle]="{
+                'border-color': validEmail
+                  ? 'green'
+                  : emailExists
+                  ? 'red'
+                  : '#00000033'
+              }"
               required
               autocomplete="off"
               formControlName="email"
@@ -27,6 +34,13 @@
               type="password"
               id="password"
               class="input"
+              [ngStyle]="{
+                'border-color': passwordValid
+                  ? 'green'
+                  : passwordExists
+                  ? 'red'
+                  : '#00000033'
+              }"
               required
               autocomplete="off"
               formControlName="password"

@@ -1,15 +1,19 @@
-<div class="container w-100">
-  <div class="row justify-content-center text-center">
-    <div class="col-6">
-      <h2>Jane Doe's Album</h2>
-      <hr>
+<ng-container *ngIf="albumInfo">
+  <div class="container w-100">
+    <div class="row gx-0 flex-column justify-content-center align-items-center p-3">
+      <div class="col">
+        <app-user-header [userInfo]="userInfo"></app-user-header>
+      </div>
+      <div class="col border-bottom p-4">
+        <h2 class="text-center">{{albumInfo.title}}</h2>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 gx-0">
+      <ng-container *ngFor="let photo of albumPhotos">
+        <div class="col p-3 d-flex justify-content-center align-items-center">
+          <app-photo-card [photoInfo]="photo"></app-photo-card>
+        </div>
+      </ng-container>
     </div>
   </div>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 gx-0">
-    <ng-container *ngFor="let photo of albumPhotos">
-      <div class="col p-3 d-flex justify-content-center align-items-center">
-
-      </div>
-    </ng-container>
-  </div>
-</div>
+</ng-container>

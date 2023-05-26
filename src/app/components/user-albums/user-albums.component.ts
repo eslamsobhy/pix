@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AlbumsService } from 'src/app/services/albums.service';
+import { UsersInfoService } from 'src/app/services/users-info.service';
 
 @Component({
   selector: 'app-user-albums',
@@ -9,17 +10,21 @@ import { AlbumsService } from 'src/app/services/albums.service';
 })
 export class UserAlbumsComponent implements OnInit {
   userId:any;
+  userInfo:any;
   userAlbums:any;
 
-  constructor(private myService:AlbumsService, private curRoute:ActivatedRoute) {
+  constructor(private AlbumsService:AlbumsService, private UsersService:UsersInfoService, private curRoute:ActivatedRoute) {
     this.userId = this.curRoute.snapshot.params['userId'];
   }
 
   ngOnInit() {
-    this.myService.getUserAlbums(this.userId).subscribe({
-      next: (data) => {
-        this.userAlbums = data;
-      },
+    this.AlbumsService.getUserAlbums(this.userId).subscribe({
+      next: (data) => this.userAlbums = data,
+      error: (err) => console.log(err)
+    })
+
+    this.UsersService.getUserById(this.userId).subscribe({
+      next: (data) => this.userInfo = data,
       error: (err) => console.log(err)
     })
   }

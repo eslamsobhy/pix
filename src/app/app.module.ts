@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlbumPhotosComponent } from './components/album-photos/album-photos.component';
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
+import { UserHeaderComponent } from './components/user-header/user-header.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { PhotoCardComponent } from './components/photo-card/photo-card.component
     AlbumCardComponent,
     UserAlbumsComponent,
     AlbumPhotosComponent,
-    PhotoCardComponent
+    PhotoCardComponent,
+    UserHeaderComponent
   ],
   imports: [
     BrowserModule,

@@ -128,7 +128,7 @@ i {
 .input-field input:valid ~ label {
   top: -10px;
   font-size: 13px;
-  color: #09946f;
+  /* color: #09946f; */
 }
 
 .input-field input:focus,

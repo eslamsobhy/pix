@@ -9,6 +9,7 @@ header {
   font-size: 25px;
   font-weight: bold;
   color: #09946f;
+  user-select: none;
   cursor: pointer;
 }
 

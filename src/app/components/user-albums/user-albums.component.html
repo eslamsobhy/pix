@@ -1,14 +1,17 @@
 <ng-container *ngIf="userInfo && userAlbums">
   <div class="container w-100">
-    <div class="row justify-content-center align-items-center gap-4 p-3">
+    <div class="row gx-0 flex-column justify-content-center align-items-center p-3">
       <div class="col">
         <app-user-header [userInfo]="userInfo"></app-user-header>
       </div>
+      <div class="col border-bottom p-4">
+        <h3 class="text-center">{{userInfo.name}}'s Albums</h3>
+      </div>
     </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 gx-0">
-      <ng-container *ngFor="let album of userAlbums">
+      <ng-container *ngFor="let album of userAlbums; index as i">
         <div class="col p-3 d-flex justify-content-center align-items-center">
-            <app-album-card [albumInfo]="album"></app-album-card>
+            <app-album-card [albumInfo]="album" routerLink="/users/{{userInfo.id}}/albums/{{i + 1}}"></app-album-card>
         </div>
       </ng-container>
     </div>

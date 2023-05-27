@@ -107,9 +107,9 @@ export class AddUserComponent {
     });
     this.myValidation.reset();
     this.additionSuccess = 1;
-    this.myValidation.controls['name'].markAsUntouched();
-    this.myValidation.controls['phone'].markAsUntouched();
-    this.myValidation.controls['email'].markAsUntouched();
+    // this.myValidation.controls['name'].markAsUntouched();
+    // this.myValidation.controls['phone'].markAsUntouched();
+    // this.myValidation.controls['email'].markAsUntouched();
     this.myModalInstance.close();
   }
 }

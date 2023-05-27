@@ -2,7 +2,7 @@ div[class~="container-fluid"]{
   padding: 0;
 }
 img{
-  max-width: 5vw;
+  width: 6rem !important;
 }
 div[class~="card"]:hover{
   background-color: hsla(192, 43%, 35%, 0.5);

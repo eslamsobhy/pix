@@ -42,8 +42,14 @@ export class UsersListComponent implements OnInit {
     // this.resetPage();
   }
 
-  update(userData:any){
-    
+  update(userData:any,userId:any){
+    let refIndex = this.Users.findIndex((el:any)=>{el.id === userId});
+    this.Users[refIndex].name = userData.name;
+    this.Users[refIndex].email = userData.email;
+    this.Users[refIndex].phone = userData.phone;
+    this.Users[refIndex].address.city = userData.address.city;
+    this.Users[refIndex].address.street = userData.address.street;
+    this.Users[refIndex].address.suite = userData.address.suite;
   }
 
   /*

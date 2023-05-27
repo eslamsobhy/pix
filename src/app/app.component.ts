@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'AEA-Albumii';
+
+  // adminId = "admin@gmail.com";
+  // adminPassword = "admin";
+
+  // userId = "user@gmail.com";
+  // userPassword = "user";
 }

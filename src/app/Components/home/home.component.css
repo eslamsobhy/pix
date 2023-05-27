@@ -65,7 +65,7 @@ article.heading {
 }
 
 div.heading {
-  color: #09946f;
+  color: var(--primary-color);
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 60px;
@@ -79,7 +79,7 @@ article.heading p {
 }
 
 .button {
-  background-color: #09946f;
+  background-color: var(--primary-color);
   color: white;
   font-weight: bold;
   text-align: center;
@@ -88,12 +88,12 @@ article.heading p {
   padding: 15px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 5px 0 #09946f;
+  box-shadow: 0 0 5px 0 var(--primary-color);
   transition: all 0.3s ease-in-out;
 }
 
 .button:hover {
-  background-color: #067a5b;
+  background-color: var(--secondary-color);
 }
 
 /* MEDIA QUERIES */

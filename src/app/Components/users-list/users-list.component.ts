@@ -12,7 +12,7 @@ export class UsersListComponent implements OnInit {
   constructor(
     private usersService: UsersInfoService,
     private myRouter: Router,
-    private route: ActivatedRoute,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -39,12 +39,13 @@ export class UsersListComponent implements OnInit {
   }) {
     this.Users.push(userData);
     //Refresh Component
-    this.resetPage();
+    // this.resetPage();
   }
 
+  /*
   resetPage(){
     this.myRouter.routeReuseStrategy.shouldReuseRoute = () => false;
     this.myRouter.onSameUrlNavigation = 'reload';
     this.myRouter.navigate(['./'], {relativeTo: this.route});
-  }
+  }*/
 }

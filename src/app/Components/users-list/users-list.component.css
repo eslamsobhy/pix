@@ -5,11 +5,21 @@ img{
   width: 6rem !important;
 }
 div[class~="card"]:hover{
-  background-color: hsla(192, 43%, 35%, 0.5);
+  background-color: #eee;
   cursor: pointer;
 }
 div[class~="card"]:active{
-  background-color: hsla(192, 43%, 35%, 1);
-  color:whitesmoke;
+  background-color: #ddd;
 }
 
+.myheader {
+  background-color: #ddd !important;
+}
+
+.table-head {
+  background-color: #ddd;
+}
+
+.text-custom {
+  color: var(--primary-color);
+}

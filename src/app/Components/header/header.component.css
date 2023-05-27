@@ -8,14 +8,14 @@ header {
 .logo {
   font-size: 25px;
   font-weight: bold;
-  color: #2338B0;
+  color: var(--primary-color);
   user-select: none;
   cursor: pointer;
 }
 
 .logo span {
   padding: 0 2px;
-  background-color: #2338B0;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 5px;
 }
@@ -35,8 +35,8 @@ li {
 }
 
 li:hover {
-  border-bottom-color: #2338B0;
-  color: #2338B0;
+  border-bottom-color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 header img {

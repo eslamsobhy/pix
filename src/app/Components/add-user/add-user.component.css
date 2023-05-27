@@ -1,1 +1,10 @@
+.btn-outline-custom {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background-color: transparent;
+}
 
+.btn-outline-custom:hover {
+  color: white;
+  background-color: var(--primary-color);
+}

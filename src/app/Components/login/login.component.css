@@ -30,7 +30,7 @@
 .logo {
   font-size: 25px;
   font-weight: bold;
-  color: #09946f;
+  color: var(--primary-color);
   position: absolute;
   top: 20px;
   left: 20px;
@@ -39,7 +39,7 @@
 
 .logo span {
   padding: 0 2px;
-  background-color: #09946f;
+  background-color: var(--primary-color);
   color: white;
   border-radius: 5px;
 }
@@ -128,12 +128,12 @@ i {
 .input-field input:valid ~ label {
   top: -10px;
   font-size: 13px;
-  /* color: #09946f; */
+  /* color: var(--primary-color); */
 }
 
 .input-field input:focus,
 .input-field input:valid {
-  border-bottom: 1px solid #09946f;
+  border-bottom: 1px solid var(--primary-color);
 }
 
 .input-field .submit {
@@ -154,7 +154,7 @@ i {
 
 .input-field .submit:hover {
   /* background-color: rgba(37, 95, 156, 0.8); */
-  background-color: #09946f;
+  background-color: var(--primary-color);
   color: #fff;
 }
 

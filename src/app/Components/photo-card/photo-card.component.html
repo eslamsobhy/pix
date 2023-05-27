@@ -1,0 +1,14 @@
+<div class="card text-bg-dark d-inline-block border-0" (click)="open()" style="width: 14rem; box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;">
+  <img [src]="photoInfo.url" class="card-img">
+  <div class="card-img-overlay">
+    <h5 class="card-title">{{photoInfo.title | slice: 0:13}}...</h5>
+    <div class="d-flex justify-content-center align-items-center icon-circle" (click)="starClick($event)" (mouseover)="mouseOver()" (mouseout)="mouseOut()">
+      <ng-container *ngIf="!mouseOverStar && !starClicked">
+        <i class="bi bi-star pb-1 star-icon"></i>
+      </ng-container>
+      <ng-container *ngIf="mouseOverStar || starClicked">
+        <i class="bi bi-star-fill pb-1 star-icon"></i>
+      </ng-container>
+    </div>
+  </div>
+</div>

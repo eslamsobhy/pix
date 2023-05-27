@@ -20,10 +20,7 @@
         </div>
       </div>
       <div *ngFor="let user of Users" class="my-3">
-        <div
-          class="d-flex flex-column flex-md-row align-items-center justify-content-evenly card p-3 rounded-3"
-          (click)="selectUser()"
-        >
+        <div class="d-flex flex-row align-items-center justify-content-evenly card p-3 rounded-3 " routerLink="/users/{{user.id}}/albums" (click)="selectUser()">
           <img
             class="rounded-circle shadow-4-strong  ms-2"
             src="https://cdn-icons-png.flaticon.com/512/219/219983.png"

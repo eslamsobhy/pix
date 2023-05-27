@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { AlbumsService } from 'src/app/services/albums.service';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css']
+  selector: 'app-album-card',
+  templateUrl: './album-card.component.html',
+  styleUrls: ['./album-card.component.css']
 })
-export class CardComponent implements OnInit{
+export class AlbumCardComponent implements OnInit{
   @Input() albumInfo:any;
   displayPhotos:any;
 

@@ -1,0 +1,15 @@
+.card {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card:hover .display-photos div {
+  background-color: #000000;
+}
+
+.card:hover .display-photos img {
+  opacity: .6;
+}

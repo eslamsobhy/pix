@@ -12,7 +12,7 @@ export class RegisterComponent {
   onHover() {
     this.isHovered = true;
     this.changeStyle = {
-      'background-color': '#09946f',
+      'background-color': '#2338B0',
       color: '#fff',
     };
   }

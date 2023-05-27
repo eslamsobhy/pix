@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #2338B0;
+  --secondary-color: #1F3199;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +12,7 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif !important;
 }
 
 .container {

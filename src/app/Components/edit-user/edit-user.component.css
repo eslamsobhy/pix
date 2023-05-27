@@ -1,0 +1,11 @@
+.btn-outline-custom{
+  background-color: transparent;
+  color:var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-outline-custom:hover{
+  background-color: var(--primary-color);
+  color:white;
+  border: 1px solid var(--primary-color);
+}

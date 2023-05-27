@@ -42,6 +42,10 @@ export class UsersListComponent implements OnInit {
     // this.resetPage();
   }
 
+  update(userData:any){
+    
+  }
+
   /*
   resetPage(){
     this.myRouter.routeReuseStrategy.shouldReuseRoute = () => false;

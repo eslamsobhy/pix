@@ -1,16 +1,13 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import {
-  ModalDismissReasons,
-  NgbModal,
-  NgbModalRef,
-} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
-  selector: 'app-add-user',
-  templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.css'],
+  selector: 'app-edit-user',
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css'],
 })
-export class AddUserComponent {
+export class EditUserComponent implements OnInit{
   myValidation = new FormGroup({
     name: new FormControl('', [
       Validators.required,
@@ -40,11 +37,22 @@ export class AddUserComponent {
   myModalInstance: any;
 
   //Event For Sending Data
-  @Output('dataEvnt') additionEvent = new EventEmitter();
+  @Output('dataUpdated') additionEvent = new EventEmitter();
+  @Input('userData') user:any;
 
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal) {
+  }
+  ngOnInit(): void {
+   this.myValidation.controls["name"].setValue(this.user.name);
+   this.myValidation.controls["email"].setValue(this.user.email);
+   this.myValidation.controls["phone"].setValue(this.user.phone);
+   this.myValidation.controls["city"].setValue(this.user.address.city);
+   this.myValidation.controls["street"].setValue(this.user.address.street);
+   this.myValidation.controls["suite"].setValue(this.user.address.suite);
+  }
 
-  open(content: any) {
+  open(content: any, event:any) {
+    event.stopPropagation();
     this.myModalInstance = this.modalService.open(content);
     this.myModalInstance.result.then(
       (result: any) => {},
@@ -62,7 +70,7 @@ export class AddUserComponent {
   //   }
   // }
 
-  addUser() {
+  editUser() {
     if (!this.myValidation.controls['name'].valid) {
       this.userError = 1;
     } else {
@@ -84,11 +92,16 @@ export class AddUserComponent {
       !this.myValidation.controls['suite'].valid
     ) {
       this.addressError = 1;
-    }else{
+    } else {
       this.addressError = 0;
     }
 
-    if (this.userError || this.phoneError || this.emailError || this.addressError) {
+    if (
+      this.userError ||
+      this.phoneError ||
+      this.emailError ||
+      this.addressError
+    ) {
       this.additionSuccess = 0;
       throw 'Invalid Data...';
     }

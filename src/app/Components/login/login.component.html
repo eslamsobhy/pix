@@ -1,0 +1,57 @@
+<div class="wrapper">
+  <div class="container main">
+    <div class="row">
+      <div class="col-md-6 side-image">
+        <!--logo-->
+        <div class="logo"><span>P</span>IX</div>
+        <div class="text">
+          <p>Join our artists community - <i>PIX</i></p>
+        </div>
+      </div>
+      <form [formGroup]="myValidation" class="col-md-6 right">
+        <div class="input-box">
+          <header>Login</header>
+          <div class="input-field">
+            <input
+              type="text"
+              id="email"
+              class="input"
+              [ngStyle]="{
+                'border-color': validEmail
+                  ? 'green'
+                  : emailExists
+                  ? 'red'
+                  : '#00000033'
+              }"
+              required
+              autocomplete="off"
+              formControlName="email"
+            />
+            <label for="email">Email</label>
+          </div>
+          <div class="input-field">
+            <input
+              type="password"
+              id="password"
+              class="input"
+              [ngStyle]="{
+                'border-color': passwordValid
+                  ? 'green'
+                  : passwordExists
+                  ? 'red'
+                  : '#00000033'
+              }"
+              required
+              autocomplete="off"
+              formControlName="password"
+            />
+            <label for="password">Password</label>
+          </div>
+          <div class="input-field">
+            <input type="submit" class="submit" (click)="join()" value="Join" />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AlbumPhotosComponent } from './components/album-photos/album-photos.component';
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
 import { UserHeaderComponent } from './components/user-header/user-header.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -29,6 +31,10 @@ import { UserHeaderComponent } from './components/user-header/user-header.compon
     AlbumPhotosComponent,
     PhotoCardComponent,
     UserHeaderComponent
+    CardComponent,
+    UserAlbumsComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

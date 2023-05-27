@@ -18,7 +18,6 @@ import { UserHeaderComponent } from './components/user-header/user-header.compon
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,11 +29,10 @@ import { RegisterComponent } from './components/register/register.component';
     UserAlbumsComponent,
     AlbumPhotosComponent,
     PhotoCardComponent,
-    UserHeaderComponent
-    CardComponent,
+    UserHeaderComponent,
     UserAlbumsComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +41,7 @@ import { RegisterComponent } from './components/register/register.component';
     FormsModule,
     ReactiveFormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

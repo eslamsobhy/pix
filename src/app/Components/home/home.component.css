@@ -28,6 +28,7 @@
   box-shadow: 0 0 10px 0 black;
   border-radius: 10px;
   cursor: pointer;
+  border: none !important;
   transition: all 0.3s ease-in-out;
 }
 

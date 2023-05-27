@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Provider } from '@angular/core';
 import { UsersInfoService } from 'src/app/services/users-info.service';
-import { Router, RouterLink } from '@angular/router';
+import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -9,23 +9,42 @@ import { Router, RouterLink } from '@angular/router';
 })
 export class UsersListComponent implements OnInit {
   Users: any;
-  constructor(private usersService:UsersInfoService,private  myRouter:Router){}
+  constructor(
+    private usersService: UsersInfoService,
+    private myRouter: Router,
+    private route: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
     this.usersService.getAllUsers().subscribe({
-      next:(data)=>{
+      next: (data) => {
         this.Users = data;
       },
-      error:(e)=>{
-        throw(e);
-      }
+      error: (e) => {
+        throw e;
+      },
     });
   }
-  selectUser(){
+  selectUser() {}
 
+  addUser() {
+    this.myRouter.navigateByUrl(`users/createNew`);
   }
 
-  addUser(){
-    this.myRouter.navigateByUrl(`users/createNew`);
+  dataReady(userData: {
+    name: string;
+    email: string;
+    phone: string;
+    address: { city: string; street: string; suite: string };
+  }) {
+    this.Users.push(userData);
+    //Refresh Component
+    this.resetPage();
+  }
+
+  resetPage(){
+    this.myRouter.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.myRouter.onSameUrlNavigation = 'reload';
+    this.myRouter.navigate(['./'], {relativeTo: this.route});
   }
 }

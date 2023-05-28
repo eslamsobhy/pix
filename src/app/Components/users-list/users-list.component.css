@@ -23,3 +23,9 @@ div[class~="card"]:active{
 .text-custom {
   color: var(--primary-color);
 }
+
+@media (max-width: 768px) {
+  .card-body h6 {
+    width: 100% !important;
+  }
+}

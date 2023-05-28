@@ -21,6 +21,11 @@ export class HeaderComponent {
     this.updateClass();
   }
 
+  @HostListener('window: scroll', [])
+  onWindowScroll() {
+    this.isOpened = false;
+  }
+
   updateClass() {
     if (window.innerWidth > 900) {
       this.isOpened = false;

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -12,7 +12,8 @@ export class DeleteUserComponent {
   myModalInstance: any;
 
   //Event For Sending Data
-  @Output('dataEvnt') additionEvent = new EventEmitter();
+  @Output('deleteEvnt') additionEvent = new EventEmitter();
+  @Input('userName') user_name:any;
 
   constructor(private modalService: NgbModal) {}
 
@@ -20,7 +21,9 @@ export class DeleteUserComponent {
     event.stopPropagation();
     this.myModalInstance = this.modalService.open(content);
     this.myModalInstance.result.then(
-      (result: any) => {},
+      (result: any) => {
+        this.additionEvent.emit(result);
+      },
       (reason: any) => {}
     );
   }

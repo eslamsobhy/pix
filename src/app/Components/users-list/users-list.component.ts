@@ -1,4 +1,4 @@
-import { Component, OnInit, Provider } from '@angular/core';
+import { Component, Input, OnInit, Provider } from '@angular/core';
 import { UsersInfoService } from 'src/app/services/users-info.service';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { UserAuthService } from 'src/app/services/user-auth.service';
@@ -49,16 +49,42 @@ export class UsersListComponent implements OnInit {
     // this.resetPage();
   }
 
-  update(userData:any,userId:any){
-    let refIndex = this.Users.findIndex((el:any)=>{el.id === userId});
+  update(
+    userData: {
+      name: string;
+      email: string;
+      phone: string;
+      address: { city: string; street: string; suite: string };
+    },
+    userId: any
+  ) {
+    // console.log('Event:' + userData.phone);
+    // console.log('userId:' + userId);
+    let refIndex = this.Users.findIndex((el: any) => {
+      if (el.id == userId) {
+        return true;
+      }
+      return false;
+    });
+    // console.log(refIndex);
     this.Users[refIndex].name = userData.name;
     this.Users[refIndex].email = userData.email;
     this.Users[refIndex].phone = userData.phone;
     this.Users[refIndex].address.city = userData.address.city;
     this.Users[refIndex].address.street = userData.address.street;
     this.Users[refIndex].address.suite = userData.address.suite;
+    // console.log('Users:' + this.Users[refIndex].name);
   }
 
+  delete(userName:any){
+    let refIndex = this.Users.findIndex((el: any) => {
+      if (el.name == userName) {
+        return true;
+      }
+      return false;
+    });
+    this.Users.splice(refIndex,1);
+  }
   /*
   resetPage(){
     this.myRouter.routeReuseStrategy.shouldReuseRoute = () => false;

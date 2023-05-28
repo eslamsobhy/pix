@@ -17,12 +17,12 @@
 
 .card:hover img {
   background-color: #000000;
-  opacity: .6;
+  opacity: 0.6;
 }
 
 .card:hover .card-img-overlay {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: flex-end;
   cursor: zoom-in;
 }

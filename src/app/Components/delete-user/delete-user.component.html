@@ -1,6 +1,9 @@
 <ng-template #content let-modal>
   <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Warning!</h4>
+    <h4 class="modal-title" id="modal-basic-title">
+      <i class="fa-solid fa-circle-exclamation pe-2" style="color: #c80000"></i
+      >Warning!
+    </h4>
     <button
       type="button"
       class="btn-close"
@@ -9,27 +12,31 @@
     ></button>
   </div>
   <div class="modal-body">
-    <h3>Are you sure you want to delete?</h3>
+    <h4>
+      Are you sure you want to delete
+      <p class="h2" style="display: inline-block; color: rgb(200, 0, 0)">
+        {{ user_name }}
+      </p>
+      ?
+    </h4>
   </div>
   <div class="modal-footer">
-
     <button
       type="button"
       name="delete"
       class="btn btn-danger"
-      (click)="closeModal()"
+      (click)="modal.close()"
     >
       Delete
     </button>
     <button
-        type="button"
-        name="add"
-        class="btn btn-outline-dark"
-        (click)="closeModal()"
-      >
-        Cancel
-      </button>
-
+      type="button"
+      name="add"
+      class="btn btn-outline-dark"
+      (click)="modal.dismiss()"
+    >
+      Cancel
+    </button>
   </div>
 </ng-template>
 

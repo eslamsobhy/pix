@@ -53,6 +53,7 @@ export class EditUserComponent implements OnInit{
 
   open(content: any, event:any) {
     event.stopPropagation();
+    this.ngOnInit();
     this.myModalInstance = this.modalService.open(content);
     this.myModalInstance.result.then(
       (result: any) => {},
@@ -109,7 +110,7 @@ export class EditUserComponent implements OnInit{
     // Send Data
     this.additionEvent.emit({
       name: this.myValidation.controls['name'].value,
-      age: this.myValidation.controls['phone'].value,
+      phone: this.myValidation.controls['phone'].value,
       email: this.myValidation.controls['email'].value,
       address: {
         city: this.myValidation.controls['city'].value,

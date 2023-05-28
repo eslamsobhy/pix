@@ -96,7 +96,7 @@ export class AddUserComponent {
     // Send Data
     this.additionEvent.emit({
       name: this.myValidation.controls['name'].value,
-      age: this.myValidation.controls['phone'].value,
+      phone: this.myValidation.controls['phone'].value,
       email: this.myValidation.controls['email'].value,
       address: {
         city: this.myValidation.controls['city'].value,

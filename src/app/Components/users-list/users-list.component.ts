@@ -1,6 +1,7 @@
 import { Component, OnInit, Provider } from '@angular/core';
 import { UsersInfoService } from 'src/app/services/users-info.service';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
+import { UserAuthService } from 'src/app/services/user-auth.service';
 
 @Component({
   selector: 'app-users-list',
@@ -12,7 +13,8 @@ export class UsersListComponent implements OnInit {
   constructor(
     private usersService: UsersInfoService,
     private myRouter: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private userAuthService:UserAuthService
   ) {}
 
   ngOnInit(): void {
@@ -25,6 +27,11 @@ export class UsersListComponent implements OnInit {
       },
     });
   }
+
+  get userRole() {
+    return this.userAuthService.getRoleToken();
+  }
+
   selectUser() {}
 
   addUser() {

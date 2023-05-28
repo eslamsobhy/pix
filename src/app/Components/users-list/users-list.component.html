@@ -8,12 +8,12 @@
         class="d-none d-md-flex flex-row align-items-center justify-content-evenly border border-1 p-2 table-head rounded-3"
       >
         <div
-          class="card-body d-flex flex-column flex-md-row align-items-center justify-content-evenly text-dark text-center"
+          class="card-body d-flex flex-column flex-md-row align-items-center justify-content-evenly text-dark text-center ps-5"
         >
-          <h5 class="m-0 p-1">Name</h5>
+          <h5 class="m-0 p-1 ps-5">Name</h5>
           <h5 class="m-0 p-1">Email</h5>
           <h5 class="m-0 p-1">Phone</h5>
-          <h5 class="m-0 p-1">Address</h5>
+          <h5 class="m-0 p-1" *ngIf="userRole == 'user'">Address</h5>
         </div>
       </div>
       <div *ngFor="let user of Users" class="my-3">
@@ -26,18 +26,17 @@
           <div
             class="card-body d-flex flex-column flex-md-row align-items-center justify-content-between text-wrap text-break text-center"
           >
-            <h6 class="my-2 my-md-0 mx-0 mx-md-2">{{ user.name }}</h6>
-            <h6 class="my-2 my-md-0 mx-0 mx-md-2">{{ user.email }}</h6>
-            <h6 class="my-2 my-md-0 mx-0 mx-md-2">{{ user.phone }}</h6>
-            <h6 class="my-2 my-md-0 mx-0 mx-md-2">
-              {{ user.address.street }} st. - {{ user.address.city }}
+            <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.name }}</h6>
+            <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.email }}</h6>
+            <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.phone }}</h6>
+            <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25" *ngIf="userRole == 'user'">
+              {{ user.address.city }} - st. {{user.address.street}}
             </h6>
           </div>
-          <div class="d-flex flex-row gap-2 justify-content-between">
+          <div *ngIf="userRole == 'admin'" class="d-flex flex-row gap-2 justify-content-between">
             <app-edit-user [userData]="user" (dataUpdated)="update($event,user.id)"></app-edit-user>
             <app-delete-user></app-delete-user>
           </div>
-
         </div>
       </div>
     </main>

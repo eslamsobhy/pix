@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'users', component: UsersListComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
-  {path: 'signup', component: RegisterComponent, canActivate: [AuthGuard]},
+  {path: 'signup', component: RegisterComponent, canActivate: [LoginGuard]},
   {path: 'users/add', component: AddUserComponent, canActivate: [AuthGuard]},
   {path: 'users/:userId/albums', component: UserAlbumsComponent, canActivate: [AuthGuard]},
   {path: 'users/:userId/albums/:albumId', component: AlbumPhotosComponent, canActivate: [AuthGuard]},

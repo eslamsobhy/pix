@@ -1,0 +1,39 @@
+.error {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 5rem;
+}
+
+.status {
+  color: var(--primary-color);
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn {
+  border: 1px solid var(--primary-color);
+  outline: none;
+  height: 45px;
+  width: 100px;
+  margin: 60px auto;
+  color: var(--primary-color);
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+}

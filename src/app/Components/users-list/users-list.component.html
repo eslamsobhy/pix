@@ -1,6 +1,8 @@
 <div class="container-fluid">
   <div class="row gx-0 d-flex align-items-center justify-content-center">
-    <header class="navbar justify-content-end sticky-top navbar-outline-light bg-light px-5 mb-3 myheader">
+    <header
+      class="navbar justify-content-end sticky-top navbar-outline-light bg-light px-5 mb-3 myheader"
+    >
       <app-add-user (dataEvnt)="dataReady($event)"></app-add-user>
     </header>
     <main class="col-8">
@@ -10,16 +12,20 @@
         <div
           class="card-body d-flex flex-column flex-md-row align-items-center justify-content-evenly text-dark text-center ps-5"
         >
-          <h5 class="m-0 p-1 ps-5">Name</h5>
+          <h5 class="m-0 p-1">Name</h5>
           <h5 class="m-0 p-1">Email</h5>
           <h5 class="m-0 p-1">Phone</h5>
           <h5 class="m-0 p-1" *ngIf="userRole == 'user'">Address</h5>
         </div>
       </div>
       <div *ngFor="let user of Users" class="my-3">
-        <div class="d-flex flex-column flex-md-row align-items-center justify-content-evenly card p-3 rounded-3 " routerLink="/users/{{user.id}}/albums" (click)="selectUser()">
+        <div
+          class="d-flex flex-column flex-md-row align-items-center justify-content-evenly card p-3 rounded-3"
+          routerLink="/users/{{ user.id }}/albums"
+          (click)="selectUser()"
+        >
           <img
-            class="rounded-circle shadow-4-strong  ms-2"
+            class="rounded-circle shadow-4-strong ms-2"
             src="assets/icons/profile.png"
             alt="avatar"
           />
@@ -29,13 +35,25 @@
             <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.name }}</h6>
             <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.email }}</h6>
             <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25">{{ user.phone }}</h6>
-            <h6 class="my-2 my-md-0 mx-0 mx-md-2 w-25" *ngIf="userRole == 'user'">
-              {{ user.address.city }} - st. {{user.address.street}}
+            <h6
+              class="my-2 my-md-0 mx-0 mx-md-2 w-25"
+              *ngIf="userRole == 'user'"
+            >
+              {{ user.address.city }} - st. {{ user.address.street }}
             </h6>
           </div>
-          <div *ngIf="userRole == 'admin'" class="d-flex flex-row gap-2 justify-content-between">
-            <app-edit-user [userData]="user" (dataUpdated)="update($event,user.id)"></app-edit-user>
-            <app-delete-user [userName]="user.name" (deleteEvnt)="delete(user.name)"></app-delete-user>
+          <div
+            *ngIf="userRole == 'admin'"
+            class="d-flex flex-row gap-2 justify-content-between"
+          >
+            <app-edit-user
+              [userData]="user"
+              (dataUpdated)="update($event, user.id)"
+            ></app-edit-user>
+            <app-delete-user
+              [userName]="user.name"
+              (deleteEvnt)="delete(user.name)"
+            ></app-delete-user>
           </div>
         </div>
       </div>

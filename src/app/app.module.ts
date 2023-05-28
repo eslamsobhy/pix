@@ -4,23 +4,23 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
-import { HomeComponent } from './components/home/home.component';
-import { UsersListComponent } from './components/users-list/users-list.component';
-import { AddUserComponent } from './components/add-user/add-user.component';
-import { AlbumCardComponent } from './components/album-card/album-card.component';
-import { UserAlbumsComponent } from './components/user-albums/user-albums.component';
+import { HeaderComponent } from './temp/header/header.component';
+import { HomeComponent } from './temp/home/home.component';
+import { UsersListComponent } from './temp/users-list/users-list.component';
+import { AddUserComponent } from './temp/add-user/add-user.component';
+import { AlbumCardComponent } from './temp/album-card/album-card.component';
+import { UserAlbumsComponent } from './temp/user-albums/user-albums.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { AlbumPhotosComponent } from './components/album-photos/album-photos.component';
-import { PhotoCardComponent } from './components/photo-card/photo-card.component';
-import { UserHeaderComponent } from './components/user-header/user-header.component';
-import { LoginComponent } from './components/login/login.component';
-import { RegisterComponent } from './components/register/register.component';
-import { DeleteUserComponent } from './components/delete-user/delete-user.component';
-import { EditUserComponent } from './components/edit-user/edit-user.component';
-import { ErrorComponent } from './components/error/error.component';
+import { AlbumPhotosComponent } from './temp/album-photos/album-photos.component';
+import { PhotoCardComponent } from './temp/photo-card/photo-card.component';
+import { UserHeaderComponent } from './temp/user-header/user-header.component';
+import { LoginComponent } from './temp/login/login.component';
+import { RegisterComponent } from './temp/register/register.component';
+import { DeleteUserComponent } from './temp/delete-user/delete-user.component';
+import { EditUserComponent } from './temp/edit-user/edit-user.component';
+import { ErrorComponent } from './temp/error/error.component';
 
 
 @NgModule({

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DeleteUserComponent } from './Components/delete-user/delete-user.component';
 import { EditUserComponent } from './Components/edit-user/edit-user.component';
+import { ErrorComponent } from './components/error/error.component';
+
 
 @NgModule({
   declarations: [
@@ -37,10 +40,12 @@ import { EditUserComponent } from './Components/edit-user/edit-user.component';
     RegisterComponent,
     DeleteUserComponent,
     EditUserComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

@@ -7,15 +7,18 @@ import { HomeComponent } from './components/home/home.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { AuthGuard } from './auth/auth.guard';
+import { ErrorComponent } from './components/error/error.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'users', component: UsersListComponent},
+  {path: 'users', component: UsersListComponent, canActivate: [AuthGuard]},
   {path: 'login', component: LoginComponent},
-  {path: 'signup', component: RegisterComponent},
-  {path: 'users/add', component: AddUserComponent },
-  {path: 'users/:userId/albums', component: UserAlbumsComponent},
-  {path: 'users/:userId/albums/:albumId', component: AlbumPhotosComponent}
+  {path: 'signup', component: RegisterComponent, canActivate: [AuthGuard]},
+  {path: 'users/add', component: AddUserComponent, canActivate: [AuthGuard]},
+  {path: 'users/:userId/albums', component: UserAlbumsComponent, canActivate: [AuthGuard]},
+  {path: 'users/:userId/albums/:albumId', component: AlbumPhotosComponent, canActivate: [AuthGuard]},
+  {path: '**', component: ErrorComponent}
 ];
 
 @NgModule({

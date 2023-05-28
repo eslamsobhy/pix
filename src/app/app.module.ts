@@ -17,6 +17,8 @@ import { PhotoCardComponent } from './components/photo-card/photo-card.component
 import { UserHeaderComponent } from './components/user-header/user-header.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
+import { RouterModule } from '@angular/router';
+import { ErrorComponent } from './components/error/error.component';
 
 @NgModule({
   declarations: [
@@ -33,10 +35,12 @@ import { RegisterComponent } from './components/register/register.component';
     UserAlbumsComponent,
     LoginComponent,
     RegisterComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    RouterModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,

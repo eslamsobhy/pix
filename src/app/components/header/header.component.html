@@ -1,7 +1,7 @@
 <section class="container header-container">
   <header>
     <div routerLink="/" class="logo"><span>P</span>IX</div>
-    <ul [class.menu]="isOpened">
+    <ul [class.menu]="isOpened" (click)="handleClick($event)">
       <li routerLink="/">Home</li>
       <li>Offers</li>
       <li>Contact Us</li>

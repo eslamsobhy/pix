@@ -10,7 +10,10 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 export class HeaderComponent {
   isOpened: boolean = false;
 
-  constructor(private userAuthService:UserAuthService, private router:Router){}
+  constructor(
+    private userAuthService: UserAuthService,
+    private router: Router
+  ) {}
 
   get loggedIn() {
     return this.userAuthService.getLoggedToken();
@@ -36,8 +39,14 @@ export class HeaderComponent {
     this.isOpened = !this.isOpened;
   }
 
+  handleClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'LI') {
+      this.isOpened = false;
+    }
+  }
+
   logOut() {
-    console.log('tmam');
     localStorage.clear();
     this.router.navigateByUrl('/');
   }
